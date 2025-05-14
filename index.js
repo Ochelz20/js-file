@@ -37,16 +37,35 @@
 
 // Assignment
 
-let firstNum = prompt('Enter the first number')
-console.log(firstNum)
+// let firstNum = prompt('Enter the first number')
+// console.log(firstNum)
 
-let secondNum = prompt('Enter the second number')
-console.log(secondNum)
+// let secondNum = prompt('Enter the second number')
+// console.log(secondNum)
 
-console.log(firstNum + secondNum)
-console.log(firstNum - secondNum)
-console.log(firstNum * secondNum)
-console.log(firstNum / secondNum)
-console.log(firstNum % secondNum)
-console.log(firstNum ** secondNum)
-console.log(firstNum++ )
+// console.log(firstNum + secondNum)
+// console.log(firstNum - secondNum)
+// console.log(firstNum * secondNum)
+// console.log(firstNum / secondNum)
+// console.log(firstNum % secondNum)
+// console.log(firstNum ** secondNum)
+// console.log(firstNum++ )
+
+
+let a = '5.4'
+let b = '4'
+console.log(a);
+
+console.log(a+b);
+console.log(Number(a + Number(b)));
+console.log(parseInt(a) + parseInt(b));
+console.log(parseFloat(a));
+
+let c = '42.5abc'
+let d = 5
+console.log(Number(c));
+console.log(parseInt(c) + d);
+console.log(parseFloat(c) + d);
+
+let answer = parseInt(c) + d
+document.getElementById('message').innerHTML = `The answer is ${answer}`
