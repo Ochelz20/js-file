@@ -128,24 +128,41 @@
 //         }
 
 
-let age = 19
-if(age == 18){
-    console.log('you are 18')
+// let age = 19
+// if(age == 18){
+//     console.log('you are 18')
+// }
+// else if(age < 18){
+//     console.log('you are not yet an adult');
+// }
+// else if(age > 70){
+//     console.log('you are an oldie')
+// }
+// else if(age !=='19'){
+//     console.log('you are 19')
+// }
+// else if(age === '16'){
+//     console.log('you are 16')
+// }
+// else{
+//     console.log('you are not 18')
+// }
+
+let c = 54
+if(c == '35'){
+    console.log('c is 35')
 }
-else if(age < 18){
-    console.log('you are not yet an adult');
+
+else if(c > 2){
+    console.log('c is greater than 2')
 }
-else if(age > 70){
-    console.log('you are an oldie')
+
+else if(c === '54'){
+    console.log('c is 54')
 }
-else if(age !=='19'){
-    console.log('you are 19')
-}
-else if(age === '16'){
-    console.log('you are 16')
-}
+
 else{
-    console.log('you are not 18')
+    console.log('c is not 35')
 }
 
 
@@ -193,3 +210,90 @@ else{
 //     console.log('The statement is not true')
 // }
 
+//logical operators
+
+
+//LOGICAL && (it only execute when both is true)
+let d = 15
+if (d > 10 && d < 20){
+    console.log('d is between 10 and 20')
+}
+
+if(d > 10 && d == 20){
+    console.log('This statement is not true')
+}
+
+if(d < 10 && d == 15){
+    console.log('This statement is also not true')
+}
+
+if(d < 10 && d > 25){
+    console.log('This statement is definitely not true')
+}
+
+if(d > 14 && d == 15){
+    console.log('This statement is true')
+}
+
+
+//LOGICAL || (it only execute when either of them is true)
+
+
+let e = 15
+
+if (e > 10 || e < 20){
+    console.log('d is between 10 and 20')
+}
+
+if(e > 10 || e == 20){
+    console.log('This statement is not true')
+}
+
+if(e < 10 || e == 15){
+    console.log('This statement is also not true')
+}
+
+if(e < 10 || e > 25){
+    console.log('This statement is definitely not true')
+}
+
+if(e > 14 || e == 15){
+    console.log('This statement is true')
+}
+
+let age = 27
+if(age >=13 && age < 20){
+    console.log('You are a teenager')
+}
+
+else if(age > 21 && age <= 40){
+    console.log('You are an adult')
+}
+
+else if(age >= 1 && age <= 3){
+    console.log('You are a toddler')
+}
+
+else{
+    console.log('You are not a teenager, adult, or toddler')
+}
+
+//LOGICAL NOT (!)
+
+let isLoggedIn = true
+if(isLoggedIn){
+    console.log('You are logged in')
+}
+
+else{
+    console.log('You are not logged in')
+}
+
+let isCompleted = false
+if(!isCompleted){
+    console.log('Your task is not completed')
+}
+
+else{
+    console.log('Your task is completed')
+}
