@@ -37,13 +37,18 @@
 
 // Assignment
 
-// let firstNum = prompt('Enter the first number')
+//  let firstNum = prompt('Enter the first number')
 // console.log(firstNum)
 
 // let secondNum = prompt('Enter the second number')
 // console.log(secondNum)
 
-// console.log(firstNum + secondNum)
+// let thirdNum = Number(firstNum) + Number(secondNum)
+// console.log(thirdNum);
+
+
+
+// // console.log(firstNum + secondNum)
 // console.log(firstNum - secondNum)
 // console.log(firstNum * secondNum)
 // console.log(firstNum / secondNum)
@@ -51,21 +56,120 @@
 // console.log(firstNum ** secondNum)
 // console.log(firstNum++ )
 
+// Assignment on IF CONDITION
+ 
+let firstNum = 70
+        if (firstNum == 20) {
+                console.log('true');
+                
+        }
 
-let a = '5.4'
-let b = '4'
-console.log(a);
+        else{
+                console.log('false');
+                
+        }
 
-console.log(a+b);
-console.log(Number(a + Number(b)));
-console.log(parseInt(a) + parseInt(b));
-console.log(parseFloat(a));
 
-let c = '42.5abc'
-let d = 5
-console.log(Number(c));
-console.log(parseInt(c) + d);
-console.log(parseFloat(c) + d);
+        let secondNum = 60
+        if (secondNum = '60') {
+                console.log('true')
+        }
 
-let answer = parseInt(c) + d
-document.getElementById('message').innerHTML = `The answer is ${answer}`
+        else if (secondNum == 60 ){
+                console.log('false');
+                
+        }
+
+        else{
+                console.log('none')
+        }
+
+        let thirdNum = 50
+        if(thirdNum == '60') {
+                console.log(true);
+                
+        }
+
+        else if (thirdNum === 60){
+                console.log('false');
+                
+        }
+
+        else {
+                console.log('none');
+                
+        }
+
+        let forthNum = 45
+        if (forthNum != '30') {
+                console.log('false');
+                
+        }
+
+        else{
+                console.log('true');
+                
+        }
+
+        let fifthNum = 40
+        if(fifthNum == '39' ) {
+                console.log('false');
+                
+        }
+
+        else if (fifthNum !== 40) {
+                console.log('true');
+                
+        }
+
+        else{
+                console.log('none');
+                
+        }
+
+
+
+// let a = '5.4'
+// let b = '4'
+// console.log(a);
+
+// console.log(a+b);
+// console.log(Number(a + Number(b)));
+// console.log(parseInt(a) + parseInt(b));
+// console.log(parseFloat(a));
+
+// let c = '42.5abc'
+// let d = 5
+// console.log(Number(c));
+// console.log(parseInt(c) + d);
+// console.log(parseFloat(c) + d);
+
+// let answer = parseInt(c) + d
+// document.getElementById('message').innerHTML = `The answer is ${answer}`
+
+
+
+// if (condition){
+//     //code to execute
+// }
+
+// let a = 5
+// console.log(a==6);      //This is to check for true or false
+
+// if(a=='5'){
+//     console.log('The statement is true');
+// }
+// else if(a===5){
+//     console.log('The statement is also true')
+// }
+// else{
+//     console.log('The statement is not true')
+// }
+
+// if(a !='5'){
+//     console.log('The statement is true');
+// }
+// else{
+//     console.log('The statement is not true')
+// }
+
