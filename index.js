@@ -58,75 +58,95 @@
 
 // Assignment on IF CONDITION
  
-let firstNum = 70
-        if (firstNum == 20) {
-                console.log('true');
+// let firstNum = 70
+//         if (firstNum == 20) {
+//                 console.log('true');
                 
-        }
+//         }
 
-        else{
-                console.log('false');
+//         else{
+//                 console.log('false');
                 
-        }
+//         }
 
 
-        let secondNum = 60
-        if (secondNum = '60') {
-                console.log('true')
-        }
+//         let secondNum = 60
+//         if (secondNum = '60') {
+//                 console.log('true')
+//         }
 
-        else if (secondNum == 60 ){
-                console.log('false');
+//         else if (secondNum == 60 ){
+//                 console.log('false');
                 
-        }
+//         }
 
-        else{
-                console.log('none')
-        }
+//         else{
+//                 console.log('none')
+//         }
 
-        let thirdNum = 50
-        if(thirdNum == '60') {
-                console.log(true);
+//         let thirdNum = 50
+//         if(thirdNum == '60') {
+//                 console.log(true);
                 
-        }
+//         }
 
-        else if (thirdNum === 60){
-                console.log('false');
+//         else if (thirdNum === 60){
+//                 console.log('false');
                 
-        }
+//         }
 
-        else {
-                console.log('none');
+//         else {
+//                 console.log('none');
                 
-        }
+//         }
 
-        let forthNum = 45
-        if (forthNum != '30') {
-                console.log('false');
+//         let forthNum = 45
+//         if (forthNum != '30') {
+//                 console.log('false');
                 
-        }
+//         }
 
-        else{
-                console.log('true');
+//         else{
+//                 console.log('true');
                 
-        }
+//         }
 
-        let fifthNum = 40
-        if(fifthNum == '39' ) {
-                console.log('false');
+//         let fifthNum = 40
+//         if(fifthNum == '39' ) {
+//                 console.log('false');
                 
-        }
+//         }
 
-        else if (fifthNum !== 40) {
-                console.log('true');
+//         else if (fifthNum !== 40) {
+//                 console.log('true');
                 
-        }
+//         }
 
-        else{
-                console.log('none');
+//         else{
+//                 console.log('none');
                 
-        }
+//         }
 
+
+let age = 19
+if(age == 18){
+    console.log('you are 18')
+}
+else if(age < 18){
+    console.log('you are not yet an adult');
+}
+else if(age > 70){
+    console.log('you are an oldie')
+}
+else if(age !=='19'){
+    console.log('you are 19')
+}
+else if(age === '16'){
+    console.log('you are 16')
+}
+else{
+    console.log('you are not 18')
+}
 
 
 // let a = '5.4'
