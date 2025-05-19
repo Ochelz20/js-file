@@ -148,22 +148,22 @@
 //     console.log('you are not 18')
 // }
 
-let c = 54
-if(c == '35'){
-    console.log('c is 35')
-}
+// let c = 54
+// if(c == '35'){
+//     console.log('c is 35')
+// }
 
-else if(c > 2){
-    console.log('c is greater than 2')
-}
+// else if(c > 2){
+//     console.log('c is greater than 2')
+// }
 
-else if(c === '54'){
-    console.log('c is 54')
-}
+// else if(c === '54'){
+//     console.log('c is 54')
+// }
 
-else{
-    console.log('c is not 35')
-}
+// else{
+//     console.log('c is not 35')
+// }
 
 
 // let a = '5.4'
@@ -214,86 +214,147 @@ else{
 
 
 //LOGICAL && (it only execute when both is true)
-let d = 15
-if (d > 10 && d < 20){
-    console.log('d is between 10 and 20')
-}
+// let d = 15
+// if (d > 10 && d < 20){
+//     console.log('d is between 10 and 20')
+// }
 
-if(d > 10 && d == 20){
-    console.log('This statement is not true')
-}
+// if(d > 10 && d == 20){
+//     console.log('This statement is not true')
+// }
 
-if(d < 10 && d == 15){
-    console.log('This statement is also not true')
-}
+// if(d < 10 && d == 15){
+//     console.log('This statement is also not true')
+// }
 
-if(d < 10 && d > 25){
-    console.log('This statement is definitely not true')
-}
+// if(d < 10 && d > 25){
+//     console.log('This statement is definitely not true')
+// }
 
-if(d > 14 && d == 15){
-    console.log('This statement is true')
-}
-
-
-//LOGICAL || (it only execute when either of them is true)
+// if(d > 14 && d == 15){
+//     console.log('This statement is true')
+// }
 
 
-let e = 15
+// //LOGICAL || (it only execute when either of them is true)
 
-if (e > 10 || e < 20){
-    console.log('d is between 10 and 20')
-}
 
-if(e > 10 || e == 20){
-    console.log('This statement is not true')
-}
+// let e = 15
 
-if(e < 10 || e == 15){
-    console.log('This statement is also not true')
-}
+// if (e > 10 || e < 20){
+//     console.log('d is between 10 and 20')
+// }
 
-if(e < 10 || e > 25){
-    console.log('This statement is definitely not true')
-}
+// if(e > 10 || e == 20){
+//     console.log('This statement is not true')
+// }
 
-if(e > 14 || e == 15){
-    console.log('This statement is true')
-}
+// if(e < 10 || e == 15){
+//     console.log('This statement is also not true')
+// }
 
-let age = 27
-if(age >=13 && age < 20){
-    console.log('You are a teenager')
-}
+// if(e < 10 || e > 25){
+//     console.log('This statement is definitely not true')
+// }
 
-else if(age > 21 && age <= 40){
-    console.log('You are an adult')
-}
+// if(e > 14 || e == 15){
+//     console.log('This statement is true')
+// }
 
-else if(age >= 1 && age <= 3){
-    console.log('You are a toddler')
-}
+// let age = 27
+// if(age >=13 && age < 20){
+//     console.log('You are a teenager')
+// }
 
-else{
-    console.log('You are not a teenager, adult, or toddler')
-}
+// else if(age > 21 && age <= 40){
+//     console.log('You are an adult')
+// }
 
-//LOGICAL NOT (!)
+// else if(age >= 1 && age <= 3){
+//     console.log('You are a toddler')
+// }
 
-let isLoggedIn = true
-if(isLoggedIn){
-    console.log('You are logged in')
-}
+// else{
+//     console.log('You are not a teenager, adult, or toddler')
+// }
 
-else{
-    console.log('You are not logged in')
-}
+// //LOGICAL NOT (!)
 
-let isCompleted = false
-if(!isCompleted){
-    console.log('Your task is not completed')
-}
+// let isLoggedIn = true
+// if(isLoggedIn){
+//     console.log('You are logged in')
+// }
 
-else{
-    console.log('Your task is completed')
-}
+// else{
+//     console.log('You are not logged in')
+// }
+
+// let isCompleted = false
+// if(!isCompleted){
+//     console.log('Your task is not completed')
+// }
+
+// else{
+//     console.log('Your task is completed')
+// }
+
+
+// let grade1 = prompt('Enter value here')
+//         let grades = Number(grade1) 
+
+//         if (grades >= 70 || grades <= 100){
+//             console.log('Excellent');
+//             document.getElementById('result').innerHTML = (`${grades} is EXCELLENT`);           
+//         }
+
+//         else if(grades >= 60 || grades == 69){
+//             console.log('very good');
+//              document.getElementById('result').innerHTML = (`${grades} is Very Good`);
+//         }
+//          else if(grades >= 50 || grades == 59){
+//             console.log('Good');
+//              document.getElementById('result').innerHTML = (`${grades} is Good`) 
+//         }
+
+//          else if(grades >= 40 || grades == 49){
+//             console.log('Pass');
+//              document.getElementById('result').innerHTML = (`${grades} is Pass`)
+//         }
+
+//         else if(grades >=0 || grades == 39){
+//             console.log('Fail');
+//             document.getElementById('result').innerHTML = (`${grades} is Fail`)    
+//         }
+
+//         else if (grades < 0 && grades > 100){
+//             console.log('Invalid Input');
+//             document.getElementById('result').innerHTML = (`${grades} is an Invalid Input`)
+//         }
+
+
+
+
+        function greetings(){
+            console.log('Good morning everyone');
+            document.getElementById('myScreen').innerHTML = 'Good morning everyone'
+        }
+        greetings()
+
+        function introduce(){
+            let myName = prompt('Enter your name')
+            console.log(`My name is ${myName}`);
+            document.getElementById('myScreen').innerHTML += `My name is ${myName}`
+        }
+
+        introduce()
+
+        function school(){
+            console.log(`The name of my school is SQI college of ICT`)
+        }
+        school()
+
+        function course(){
+            console.log('I am studying software engineering at SQI');
+        }
+        course()
+        
