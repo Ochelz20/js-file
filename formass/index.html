@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>FORM</h1>
+    <p id="warning"></p>
     <input type="text" placeholder="Fullname" id="fullname"> <br>
-    <div id="type1" style="display: none;">fill in your fullname</div><br>
+    <!-- <div id="type1" style="display: none;">fill in your fullname</div><br> -->
     <input type="email" placeholder="Email" id="email"> <br>
-    <div id="type2" style="display: none;">fill in your email</div><br>
+    <!-- <div id="type2" style="display: none;">fill in your email</div><br> -->
     <input type="password" placeholder="Password" id="password"> <br>
-    <div id="type3" style="display: none;">fill in your password</div><br>
+    <!-- <div id="type3" style="display: none;">fill in your password</div><br> -->
     <button onclick="submit()">Submit</button>
     <div id="myScreen"></div>
 
@@ -21,40 +24,31 @@
 
 
     <script>
-        function submit(){
+        function submit() {
+
             let fullname = document.getElementById('fullname').value
             let email = document.getElementById('email').value
             let password = document.getElementById('password').value
+            let warning = document.getElementById('warning')
+            let myScreen = document.getElementById('myScreen')
 
 
-            if(fullname == ''){
-                type1.style.display = 'block'
-                type1.style.color = 'red'
-                type1.style.fontSize = '10px'
-             }
-
-             if(email == ''){
-                type2.style.display = 'block'
-                type2.style.color = 'red'
-                type2.style.fontSize = '10px'
-             }
-
-             if(password == ''){
-                type3.style.display = 'block'
-                type3.style.color = 'red'
-                type3.style.fontSize = '10px'
-             }
-
-        else{
-            type1,type2,type3.style.display = 'none'
-        
-            console.log(fullname, email, password);
-            document.getElementById("fullname").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("password").value = "";
+            if (!fullname || !email || !password) {
+                warning.innerHTML = 'Please fill in all fields'
+                warning.style.color = 'red'
+                warning.style.fontSize = '13px'
+            }
+            else {
+                // type1,type2,type3.style.display = 'none'
+                myScreen.innerHTML = `Hey ${fullname} your email is ${email} and your password is ${password}`
+                console.log(fullname, email, password);
+                document.getElementById("fullname").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("password").value = "";
+            }
         }
-    }
 
     </script>
 </body>
+
 </html>

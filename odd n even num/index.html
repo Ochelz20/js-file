@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="title">NUMBER CHECKER</h1>
+    <input type="number" placeholder="Enter a number" id="number"><br>
+    <button onclick="checkNumber()">Check Number</button>
+    <div id="myScreen"></div>
+
+
+
+
+    <script>
+        function checkNumber() {
+            let number = document.getElementById("number").value;
+            let myScreen = document.getElementById("myScreen");
+            let title = document.getElementById("title");
+
+
+            if (!number){
+                myScreen.innerHTML = "Please enter a number";
+            }
+            else{
+                myScreen.innerHTML = ''
+                title.innerHTML = 'ODD/EVEN NUMBER CHECKER'
+
+                if (number % 2 === 0){
+                myScreen.innerHTML = `${number} is an even number`
+            }
+             else{
+                myScreen.innerHTML = `${ number } is an odd number`
+            }
+
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>
