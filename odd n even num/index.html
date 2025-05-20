@@ -7,11 +7,22 @@
     <title>Document</title>
 </head>
 
+<style>
+    #background{
+        height: 200px;
+        width: 200px;
+        border: 1px solid;
+    }
+</style>
+
 <body>
     <h1 id="title">NUMBER CHECKER</h1>
     <input type="number" placeholder="Enter a number" id="number"><br>
     <button onclick="checkNumber()">Check Number</button>
-    <div id="myScreen"></div>
+    <div id="myScreen"></div> <br>
+
+    <div id="background"></div>
+    <button onclick="changeBackground()">Change Background</button>
 
 
 
@@ -40,6 +51,24 @@
 
             }
 
+        }
+
+
+        let background = document.getElementById("background");
+        background.style.backgroundColor = 'red'
+
+        function changeBackground(){
+            if(background.style.backgroundColor == 'red'){
+                background.style.backgroundColor = 'blue'
+                background.style.width = '100px'
+                background.style.height = '100px'
+            }
+
+            else{
+                background.style.backgroundColor = 'red'
+                background.style.width = '200px'
+                background.style.height = '200px'
+            }
         }
     </script>
 </body>
