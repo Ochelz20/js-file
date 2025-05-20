@@ -334,27 +334,27 @@
 
 
 
-        function greetings(){
-            console.log('Good morning everyone');
-            document.getElementById('myScreen').innerHTML = 'Good morning everyone'
-        }
-        greetings()
+        // function greetings(){
+        //     console.log('Good morning everyone');
+        //     document.getElementById('myScreen').innerHTML = 'Good morning everyone'
+        // }
+        // greetings()
 
-        function introduce(){
-            let myName = prompt('Enter your name')
-            console.log(`My name is ${myName}`);
-            document.getElementById('myScreen').innerHTML += `My name is ${myName}`
-        }
+        // function introduce(){
+        //     let myName = prompt('Enter your name')
+        //     console.log(`My name is ${myName}`);
+        //     document.getElementById('myScreen').innerHTML += `My name is ${myName}`
+        // }
 
-        introduce()
+        // introduce()
 
-        function school(){
-            console.log(`The name of my school is SQI college of ICT`)
-        }
-        school()
+        // function school(){
+        //     console.log(`The name of my school is SQI college of ICT`)
+        // }
+        // school()
 
-        function course(){
-            console.log('I am studying software engineering at SQI');
-        }
-        course()
+        // function course(){
+        //     console.log('I am studying software engineering at SQI');
+        // }
+        // course()
         

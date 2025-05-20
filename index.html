@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    const, let, var
+    <!-- const, let, var -->
 
     <!-- <script>
         var x=5;
@@ -59,7 +59,7 @@
     </script> -->
 
 
-    <h1 id="name"></h1>
+    <!-- <h1 id="name"></h1>
     <p id="school"></p>
     <p id="message"></p>
 
@@ -69,8 +69,36 @@
     <p id="result"></p>
 
     <p id="myScreen"></p>
-    
-    <button onclick="course()">Click me</button>
+
+    <button onclick="course()">Click me</button> -->
+
+    <h1>FORM</h1>
+    <input type="text" placeholder="Fullname" id="fullname"> <br><br>
+    <input type="email" placeholder="Email" id="email"> <br><br>
+    <input type="password" placeholder="Password" id="password"> <br><br>
+    <button onclick="submit()">Submit</button>
+    <div id="myScreen"></div>
+
+
+    <script>
+        function submit(){
+            let fullname = document.getElementById('fullname').value
+            let email = document.getElementById('email').value
+            let password = document.getElementById('password').value
+
+
+            if(fullname == '' || email == '' || password == ''){
+                alert('Please fill in all fields')
+        }
+        else{
+            console.log(fullname, email, password);
+            document.getElementById("fullname").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+        }
+    }
+
+    </script>
 
     <script src="index.js"></script>
     
