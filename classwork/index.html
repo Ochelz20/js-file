@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .light-mode{
+            background-color: white;
+            width: 500px;
+            height: fit-content;
+            border: 1px solid;
+        }
+
+        .dark-mode{
+            background-color: black;
+            color: white;
+            width: 500px;
+            height: fit-content;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="light-mode" id="light-mode">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex totam soluta doloremque placeat excepturi debitis
+            magni, voluptatum expedita natus id nulla vero alias, et exercitationem. Error quaerat hic repudiandae nam
+            eos unde cumque sunt facilis nihil minima odio, iste, eveniet, architecto recusandae! Odio esse doloribus
+            molestias impedit! Quo velit quasi veritatis tempore non! Vero reprehenderit dolore consectetur doloribus
+            excepturi ab corrupti eum aspernatur exercitationem harum cumque totam, velit officia fugiat officiis fuga
+            rerum magni facere aut nulla molestiae minima, deleniti blanditiis! Optio nam quis quam accusantium vero
+            commodi beatae sapiente error modi molestias? Magnam voluptate voluptatibus, inventore pariatur asperiores
+            tempora?</p>
+    </div>
+
+    <!-- <div class="dark-mode" id="dark-mode">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex totam soluta doloremque placeat excepturi debitis
+            magni, voluptatum expedita natus id nulla vero alias, et exercitationem. Error quaerat hic repudiandae nam
+            eos unde cumque sunt facilis nihil minima odio, iste, eveniet, architecto recusandae! Odio esse doloribus
+            molestias impedit! Quo velit quasi veritatis tempore non! Vero reprehenderit dolore consectetur doloribus
+            excepturi ab corrupti eum aspernatur exercitationem harum cumque totam, velit officia fugiat officiis fuga
+            rerum magni facere aut nulla molestiae minima, deleniti blanditiis! Optio nam quis quam accusantium vero
+            commodi beatae sapiente error modi molestias? Magnam voluptate voluptatibus, inventore pariatur asperiores
+            tempora?</p>
+    </div> -->
+
+    <button onclick="screenMode()">Screen Mode</button>
+
+
+    <script>
+        function screenMode() {
+            let lightMode = document.getElementById("light-mode");
+            lightMode.classList.toggle("dark-mode");
+        }
+        
+    </script>
+</body>
+
+</html>
