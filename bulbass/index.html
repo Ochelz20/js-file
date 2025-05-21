@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #off-bulb, #on-bulb {
+            width: 250px;
+            height: 250px;
+            border: 1px solid;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="off-bulb"></div>
+    <div id="on-bulb"></div>
+    <br>
+    <button onclick="switchBulb()"></button>
+
+
+    <script>
+        let off_bulb = document.getElementById('off-bulb')
+        let on_bulb = document.getElementById('on-bulb')
+
+        off_bulb.style.backgroundImage = 'url(media/off-bulb.png)'
+        off_bulb.style.display = 'block'
+
+        on_bulb.style.backgroundImage = 'url(media/on-bulb.png)'
+        on_bulb.style.display = 'none'
+
+        function switchBulb(){
+            if(off_bulb.style.display == 'block'){
+                off_bulb.style.display = 'none'
+                on_bulb.style.display = 'block'
+            }
+
+            else{
+                off_bulb.style.display = 'none'
+                on_bulb.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
