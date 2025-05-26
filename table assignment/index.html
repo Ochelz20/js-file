@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        #cols,
+        #rows,
+        #eva {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="cols">Columns</label>
+    <input type="number" name="" id="cols">
+
+    <label for="rows">Rows</label>
+    <input type="number" name="" id="rows">
+
+    <label for="eva">Evaluation</label>
+    <select name="" id="eva">
+        <option value="+">ADD</option>
+        <option value="-">SUBTRACT</option>
+        <option value="*">MULTIPLY</option>
+        <option value="/">DIVIDE</option>
+    </select>
+
+    <button id="buttonTable" onclick="table()">Make me a Table</button>
+
+    <div id="myScreen"></div>
+
+
+
+    <script>
+        function table() {
+            let cols = document.getElementById('cols').value
+            let rows = document.getElementById('rows').value
+            let eva = document.getElementById('eva').value
+            let buttonTable = document.getElementById('buttonTable')
+            let myScreen = document.getElementById('myScreen')
+
+            let table = document.createElement('table')
+            for (let row = 1; row <= rows; row++) {
+                let rown = document.createElement('tr');
+                for (
+                    let col = 1; col <= cols; col++) {
+                    let coln = document.createElement('td');
+                    let result = ''
+                    switch (eva) {
+                        case '+':
+                            result = cols + rows;
+                            sign = '+'
+                            break;
+
+                        case '-':
+                            result = cols - rows;
+                            sign = '-'
+                            break;
+
+                        case '*':
+                            result = cols * rows;
+                            sign = '*'
+                            break;
+
+                        case '/':
+                            result = cols / rows;
+                            sign = '/'
+                            break;
+
+                        default:
+                            result = ''
+
+                        coln.innerHTML = `${rows} ${sign} ${cols} = ${result}`;
+                        rown.appendChild = coln;
+                        
+                    }
+                    table.appendChild = rown;
+                }
+                    myScreen.appendChild = table;
+            }
+
+
+
+        }
+    </script>
+</body>
+
+</html>

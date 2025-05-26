@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="myScreen"></div>
+
+
+    <script>
+    //    for(initialization; condition; increment/decrement){
+    //     // code to be executed
+    //    }
+
+    // for(let number = 1; number <= 10; number++){
+    //     console.log(`Number is ${number}`);
+    // }
+
+    // for(let index = 1; index <= 10; index++){
+    //     console.log('Hello World');
+    //     document.getElementById('myScreen').innerHTML += '<p>Hello World</p>'
+    // }
+
+    // for(let a = 10; a >= 1; a--){
+    //     console.log(`Number${a}`);
+    // }
+
+    // for(let b = 23; b<=35; b++){
+    //     console.log(`${b}`);
+    //     document.getElementById('myScreen').innerHTML += `<p>${b}</p>`
+    //     if(b > 5){
+    //         console.log(`I have ${b} houses`)
+    //     }
+    //     else{
+    //         console.log(`I have ${b} cars`)
+    //     }
+    // }
+
+    // for(let i = 1; i <= 15; i += 5){
+    //     console.log(`${i}`);
+    // }
+
+    // for(let k = 20; k >= 1; b-= 2){
+    //     console.log(`${k} schools`);
+    // }
+
+    // for(let z = 1; z <= 100; z++){
+    //     if(z % 2 ==0){
+    //         console.log(`${z} is even number`);
+    //         document.getElementById('myScreen').innerHTML += `<p>${z} is an even number</p>`
+    //     }
+    //     else{
+    //         console.log(`${z} is odd number`)
+    //         document.getElementById('myScreen').innerHTML += `<p>${z} is an odd number</p>`
+    //     }
+
+        
+    // }
+
+    for(let bottles = 99; bottles >= 1; bottles--){
+
+        if(bottles >1){
+        document.getElementById('myScreen').innerHTML += `<p>${bottles} bottles of beer on the wall, ${bottles} bottles of beer. <br> Take one down , pass it around, ${bottles - 1} bottles of beer on the wall.</p>`
+        }
+        else if(bottles ==1){
+        document.getElementById('myScreen').innerHTML += `<p>${bottles} bottle of beer on the wall, ${bottles} bottle of beer. <br> Take one down , pass it around, no more bottles of beer on the wall.</p>`
+        }
+        else{
+            document.getElementById('myScreen').innerHTML += '<p> No more bottles of beer on the wall, no more bottles of beer. <br> Go to the store and buy some more, 99 bottles of beer on the wall.</p>'
+        }
+    
+    }
+    </script>
+</body>
+</html>
