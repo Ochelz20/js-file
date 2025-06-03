@@ -8,7 +8,7 @@
 
 
     <style>
-        #cols,
+        #columns,
         #rows,
         #eva {
             border-radius: 10px;
@@ -17,74 +17,60 @@
 </head>
 
 <body>
-    <label for="cols">Columns</label>
-    <input type="number" name="" id="cols">
+    <label for="">Columns</label>
+    <input type="text" name="" id="columns">
 
-    <label for="rows">Rows</label>
-    <input type="number" name="" id="rows">
+    <label for="">Rows</label>
+    <input type="text" name="" id="rows">
 
-    <label for="eva">Evaluation</label>
-    <select name="" id="eva">
-        <option value="+">ADD</option>
-        <option value="-">SUBTRACT</option>
-        <option value="*">MULTIPLY</option>
-        <option value="/">DIVIDE</option>
+    <label for="">Evaluation</label>
+    <select name="" id="operators">
+        <option value="multiply">MULTIPLY</option>
+        <option value="add">ADD</option>
+        <option value="subtract">SUBTRACT</option>
+        <option value="divide">DIVIDE</option>
     </select>
 
-    <button id="buttonTable" onclick="table()">Make me a Table</button>
+    <button  onclick="makeMeATable()">Make me a Table</button>
 
     <div id="myScreen"></div>
 
 
 
     <script>
-        function table() {
-            let cols = document.getElementById('cols').value
+        function makeMeATable() {
+            let columns = document.getElementById('columns').value
             let rows = document.getElementById('rows').value
-            let eva = document.getElementById('eva').value
-            let buttonTable = document.getElementById('buttonTable')
+            let operator = document.getElementById('operators').value
+
             let myScreen = document.getElementById('myScreen')
 
-            let table = document.createElement('table')
-            for (let row = 1; row <= rows; row++) {
-                let rown = document.createElement('tr');
-                for (
-                    let col = 1; col <= cols; col++) {
-                    let coln = document.createElement('td');
-                    let result = ''
-                    switch (eva) {
-                        case '+':
-                            result = cols + rows;
-                            sign = '+'
-                            break;
+            myScreen.innerHTML = ''
 
-                        case '-':
-                            result = cols - rows;
-                            sign = '-'
-                            break;
-
-                        case '*':
-                            result = cols * rows;
-                            sign = '*'
-                            break;
-
-                        case '/':
-                            result = cols / rows;
-                            sign = '/'
-                            break;
-
-                        default:
-                            result = ''
-
-                        coln.innerHTML = `${rows} ${sign} ${cols} = ${result}`;
-                        rown.appendChild = coln;
-                        
+            if (operator == 'multiply') {
+                for (let i = 1; i <= columns; i++) {
+                    myScreen.innerHTML += `<p>${i} Multiplication Table </p>`
+                    for (let a = 1; a <= rows; a++) {
+                        myScreen.innerHTML += `<p>${i} * ${a} = ${i * a}</p>`
                     }
-                    table.appendChild = rown;
                 }
-                    myScreen.appendChild = table;
             }
-
+            else if (operator == 'add') {
+                for (let i = 1; i <= columns; i++) {
+                    myScreen.innerHTML += `<p>${i} Addition Table </p>`
+                    for (let a = 1; a <= rows; a++) {
+                        myScreen.innerHTML += `<p>${i} + ${a} = ${i + a}</p>`
+                    }
+                }
+            }
+            else if (operator == 'subtract') {
+                for (let i = 1; i <= columns; i++) {
+                    myScreen.innerHTML += `<p>${i} Addition Table </p>`
+                    for (let a = 1; a <= rows; a++) {
+                        myScreen.innerHTML += `<p>${i} - ${a} = ${i - a}</p>`
+                    }
+                }
+            }
 
 
         }

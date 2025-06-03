@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #columns,
+    #rows,
+    #eva {
+        border-radius: 10px;
+    }
+
+    table{
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+</style>
+</head>
+
+<body>
+    <label for="">Columns</label>
+    <input type="text" name="" id="columns">
+
+    <label for="">Rows</label>
+    <input type="text" name="" id="rows">
+
+    <label for="">Evaluation</label>
+    <select name="" id="operators">
+        <option value="multiply">MULTIPLY</option>
+        <option value="add">ADD</option>
+        <option value="subtract">SUBTRACT</option>
+        <option value="divide">DIVIDE</option>
+    </select>
+
+    <button onclick="makeMeATable()">Make me a Table</button>
+
+    <div id="myScreen"></div>
+
+
+    <script>
+        function makeMeATable() {
+            let columns = document.getElementById('columns').value
+            let rows = document.getElementById('rows').value
+            let operator = document.getElementById('operators').value
+
+            let myScreen = document.getElementById('myScreen')
+
+            if (operator === 'multiply') {
+                let htmlTable = '<table>'
+                for (let i = 1; i <= columns; i++) {
+                    htmlTable += `<th>${i} Multiplication Table</th>`
+                }
+                for (let a = 1; a <= rows; a++) {
+                    htmlTable += '<tr>'
+                    for (let b = 1; b <= columns; b++) {
+                        htmlTable += `<td>${b} * ${a} = ${b * a}</td>`
+                    }
+                 htmlTable += '</tr>'   
+                }
+                htmlTable += '</table>'
+                    myScreen.innerHTML = htmlTable
+            }
+            
+            if (operator === 'add') {
+                let htmlTable = '<table>'
+                for (let i = 1; i <= columns; i++) {
+                    htmlTable += `<th>${i} Addition Table</th>`
+                }
+                for (let a = 1; a <= rows; a++) {
+                    htmlTable += '<tr>'
+                    for (let b = 1; b <= columns; b++) {
+                        htmlTable += `<td>${b} + ${a} = ${b + a}</td>`
+                    }
+                 htmlTable += '</tr>'   
+                }
+                htmlTable += '</table>'
+                    myScreen.innerHTML = htmlTable
+            }
+           
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        // array
+
+let fruits = ['apple', 'mango', 'watermelon', 'pineapple', 'orange']
+console.log(fruits);
+console.log(fruits.length);
+console.log(fruits[2]);
+console.log(fruits[4]);
+
+fruits.pop()
+console.log(fruits);
+fruits.push('grapes')
+console.log(fruits);
+fruits.shift()
+console.log(fruits);
+fruits.unshift('lemon')
+ console.log(fruits); 
+//   ['lemon', 'mango', 'watermelon', 'pineapple', 'grape']
+
+console.log(fruits.slice(2,3));
+console.log(fruits.slice(0,1));
+let newFruits = fruits.slice(4,5)
+console.log(newFruits);
+console.log(fruits)
+
+fruits.splice(1,2, 'banana', 'cherry')
+console.log(fruits);
+
+
+
+    </script>
+</body>
+</html>
