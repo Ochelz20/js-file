@@ -14,9 +14,11 @@
     <div class="container-fluid py-5">
         <div class="col-8 shadow-sm m-auto p-3">
             <h2 class="text-center text-decoration-underline">TODO APPLICATION</h2>
+            <div class="alert alert-danger" role="alert" style="display: none;" id="warningMsg">Please enter a todo !
+            </div>
             <input type="text" class="form-control mb-3" placeholder="Enter a Todo" id="todo">
             <button class="btn btn-primary w-100 mb-3" onclick="addTodo()">Add Todo</button>
-            <button class="btn btn-danger btn-secondary w-100 mb-3" onclick="DeleteAll()">Delete All</button>
+            <button class="btn btn-danger btn-secondary w-100 mb-3" onclick="DeleteAllTodos()">Delete All</button>
         </div>
         <div class="container" id="myScreen"></div>
     </div>
@@ -26,21 +28,62 @@
         function addTodo() {
             let todo = document.getElementById('todo').value
             let myScreen = document.getElementById('myScreen')
+            let warningMsg = document.getElementById('warningMsg')
 
-            allTodos.push(todo)
-            console.log(allTodos)
-            myScreen.innerHTML = ''
+            // if (todo.trim() == '') {
+            if (!todo.trim()) {
+                warningMsg.style.display = 'block'
+            }
+            else {
+                allTodos.push(todo)
+                console.log(allTodos)
+                myScreen.innerHTML = ''
 
-            let htmlList = '<ol>'
-                for(let i = 0; i < allTodos.length; i++) {
-                    htmlList += `<li>${allTodos[i]}</li>`
-                }
-                htmlList += '</ol>'
-                myScreen.innerHTML = htmlList
-
+                displayTodos()
                 document.getElementById('todo').value = ''
 
+            }
         }
+
+        function displayTodos() {
+            let htmlList = '<ol>'
+            for (let i = 0; i < allTodos.length; i++) {
+                htmlList += `<li>${allTodos[i]}</li>
+                <button class= "btn btn-info mb-3" onclick="editTodo(${i})">Edit Todo</button>
+                <button class= "btn btn-warning mb-3" onclick="deleteTodo(${i})">Delete Todo</button>
+                `
+            }
+            htmlList += '</ol>'
+            myScreen.innerHTML = htmlList
+
+        }
+
+        function DeleteAllTodos() {
+            let deleted = confirm('Are you sure you want to delete all todos? This action is irreversible!')
+            if (deleted) {
+                allTodos = []
+                displayTodos()
+            }
+        }
+
+        function editTodo(i){
+            let newTodo = prompt('Enter the new todo', allTodos[i])
+           
+            if(newTodo !== null && newTodo.trim()){
+             // allTodos.splice(i, 1, newTodo)
+            allTodos[i] = newTodo
+            displayTodos()
+            }
+        }
+
+        function deleteTodo(i){
+            let deleted = confirm('Are you sure you want to delete this todo ? This action is irreversible')
+            if (deleted) {
+                allTodos.splice(i, 1)
+                displayTodos()
+            }
+        }
+
     </script>
 </body>
 
