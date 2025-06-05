@@ -38,7 +38,28 @@ console.log(fruits)
 
 fruits.splice(1,2, 'banana', 'cherry')
 console.log(fruits);
+// ['lemon', 'banana', 'cherry']
 
+// includes is for checking true or false
+console.log(fruits.includes('grape'))
+console.log(fruits.includes('lemon'))
+
+// concats is for joining 2 or more arrays together
+let fruits2 = ['watermelon', 'pineapple', 'orange']
+let allFruits = fruits.concat(fruits2)
+console.log(allFruits);
+// ['lemon', 'banana', 'cherry', 'watermelon', 'pineapple', 'orange']
+
+console.log(allFruits.join(':'))
+console.log(allFruits.sort())
+
+let numbers = [4, 2, 9, 6, 1, 8, 5, 0]
+console.log(numbers.sort())
+
+// foreach() => call back function
+
+function name()
+numbers.forEach(function)
 
 
     </script>

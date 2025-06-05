@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid  py-5">
+        <div class="container col-5 m-auto shadow py-3">
+            <h2 class="text-center text-decoration-underline">PALINDROME CHECKER</h2>
+            <div class="alert alert-danger" role="alert" style="display: none;" id="warningMsg">Please enter a word !</div>
+            <input type="text" class="form-control mt-3" placeholder="Enter a word" id="word">
+            <button class="btn btn-primary mt-3 w-100" onclick="checkWord()">Check</button>
+            <div class="container mt-3" id="myScreen"></div>
+        </div>
+    </div>
+
+
+    <script>
+        function checkWord() {
+            let word = document.getElementById('word').value
+            let myScreen = document.getElementById('myScreen')
+            let warningMsg = document.getElementById('warningMsg')
+
+            if(word.trim() == '') {
+                warningMsg.style.display = 'block'
+            }
+            else {
+                warningMsg.style.display = 'none'
+                console.log(word)
+                console.log(typeof(word))
+                let splitterWord = word.split('')
+                // split is used to split a string and convert it into an array
+                console.log(splitterWord)
+
+                let reverseWord = splitterWord.reverse()
+                console.log(reverseWord)
+
+                let joinedWord = reverseWord.join('')
+                console.log(joinedWord)
+                console.log(typeof(joinedWord))
+
+                if(word == joinedWord){
+                    myScreen.innerHTML = `<p>${word} is a palindrome</p>`
+                }
+                else{
+                    myScreen.innerHTML = `<p>${word} is not a palindrome</p>`
+                }
+                document.getElementById('word').value = ''
+            }
+        }
+    </script>
+</body>
+</html>

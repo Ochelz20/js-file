@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Fullname" id="fullname">
+    <input type="text" placeholder="School" id="school">
+    <button onclick="submitForm()"></button>
+    <div id="myScreen"></div>
+
+
+
+    <script>
+        function submitForm() {
+            let fullname = document.getElementById('fullname').value
+            let school = document.getElementById('school').value
+            let myScreen = document.getElementById('myScreen')
+
+            myScreen.innerHTML = `My name is ${fullname} and I study at ${school}`
+        }
+    </script>
+</body>
+</html>
