@@ -58,8 +58,21 @@ console.log(numbers.sort())
 
 // foreach() => call back function
 
-function name()
-numbers.forEach(function)
+
+numbers.forEach(function(number, index, allNumbers){
+    console.log(`${number} is at the index of ${index}`)
+    console.log(allNumbers)
+}
+)
+
+let colors = ['red', 'blue', 'green', 'yellow', 'purple']
+colors.forEach(function(color){
+    console.log(color)
+})
+
+for(let i = 0; i < colors.length; i++){
+    console.log(`${colors[i]}`)
+}
 
 
     </script>

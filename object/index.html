@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    
+    <script>
+        let data = {
+            name: 'Aisha',
+            school: 'SQI',
+            course: 'Cybersecurity'
+        }
+
+        console.log(data);
+        console.log(data.school);
+        console.log(data.course);
+        data.name = 'Gloria'
+        console.log(data);
+
+        data.age = 16
+        console.log(data);
+
+        // nested object
+
+        let myData = {
+            name: 'Aisha',
+            school: 'SQI',
+            course: 'Cybersecurity',
+            friends: {
+                username: 'bimbo',
+                email: 'bimbo@gmail.com'
+            }
+        }
+        console.log(myData.friends.username)
+        myData.friends.username = 'abimbola'
+        console.log(myData)
+        myData.friends.password = 'pass123'
+        console.log(myData)
+
+        let allData = {
+            name: 'Aisha',
+            school: 'SQI',
+            course: 'Cybersecurity',
+            friends: ['bimbo', 'bimbo@gmail.com']
+        }
+        console.log(allData)
+        console.log(allData.friends[0])
+        allData.friends.splice(0, 1, 'abimbola')
+        console.log(allData)
+        allData.friends.pop()
+        console.log(allData)
+</script>
+</body>
+</html>
