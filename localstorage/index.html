@@ -55,6 +55,23 @@
         // localStorage.clear()
         
         
+        let allTodos = [
+            {id: 1, task: 'Eat', isCompleted: false},
+            {id: 2, task: 'Sleep', isCompleted: true}
+        ]
+
+        // let convertedTodos = JSON.stringify(allTodos)
+        // localStorage.setItem('allTodos', convertedTodos)
+
+        localStorage.setItem('allTodos', JSON.stringify(allTodos))
+
+        // let retrievedTodos = localStorage.getItem('allTodos')
+        // console.log(retrievedTodos)
+
+        // let convTodos = JSON.parse(retrievedTodos)
+        // console.log(convTodos);
+
+        allTodos = JSON.parse(localStorage.getItem('allTodos'))
         
 
     </script>
