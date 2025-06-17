@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // to save item - localStorage.setItem('key', value)
+        // to get item - localStorage.getItem('key')
+        // to remove item - localStorage.removeItem('key')
+        // to clear all items - localStorage.clear()
+
+        // to convert javascript array or object to json string - JSON.stringify()
+        // to convert json string to javascript array or object - JSON.parse()
+
+        let jsObject = {name: 'Tolu', age: 16}
+        console.log(jsObject)
+        console.log(jsObject.name)
+
+        let jsonStr = JSON.stringify(jsObject)
+        console.log(jsonStr)
+
+        localStorage.setItem('jsonStr', jsonStr)
+
+        let fetchedItem = localStorage.getItem('jsonStr')
+        console.log(fetchedItem)
+        console.log(fetchedItem.name)
+
+        let convertedItem = JSON.parse(fetchedItem)
+        console.log(convertedItem)
+        console.log(convertedItem.age)
+
+
+        let jsArray = [1,2,3,4,5]
+        console.log(jsArray)
+        // console.log(typeof(jsArray))
+
+        let jsonStrArray = JSON.stringify(jsArray)
+        console.log(jsonStrArray)
+        console.log(typeof(jsonStrArray));
+
+        localStorage.setItem('jsonStrArray', jsonStrArray)
+
+        let retrievedItem = localStorage.getItem('jsonStrArray')
+        console.log(retrievedItem)
+
+        let convertedItemArray = JSON.parse(retrievedItem)
+        console.log(convertedItemArray);
+
+        // localStorage.removeItem('jsonStrArray')
+        // localStorage.clear()
+        
+        
+        
+
+    </script>
+</body>
+</html>
