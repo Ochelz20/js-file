@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid border border-black my-4">
+
+        <div class="row" style="min-height: 50dvh;">
+            <div class="alert alert-danger" role="alert" id="warningMsg" style="display: none;">
+                please enter a valid product name
+            </div>
+            <div class="col-12 col-md-4 shadow-sm my-2 py-4">
+                <input type="text" class="form-control col-md-4 shadow-sm my-2 py-4" placeholder="Enter a product name"
+                    id="productName">
+                <input type="number" class="form-control col-md-4 shadow-sm my-2" placeholder="Enter a product price"
+                    id="productPrice">
+                <input type="text" class="form-control col-md-4 shadow-sm my-2" placeholder="Enter a product image"
+                    id="productImage">
+                <input type="text" class="form-control col-md-4 shadow-sm my-2" placeholder="Quantity left"
+                    id="qtyLeft">
+                <button class="btn btn-primary w-100 my-2" onclick="addProduct()">Add Product</button>
+            </div>
+
+            <div class="col-12 col-md-8 my-2 py-4">
+                <table class="table">
+                    <thread>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Product Price</th>
+                            <th scope="col">Product Image</th>
+                            <th scope="col">Quantity Left</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+
+                        </tr>
+                    </thread>
+
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let allProducts = []
+
+        function addProduct() {
+            let productName = document.getElementById('productName').value
+            let productImage = document.getElementById('productImage').value
+            let productPrice = document.getElementById('productPrice').value
+            let qtyLeft = document.getElementById('qtyLeft').value
+            let warningMsg = document.getElementById('warningMsg')
+            let tableBody = document.getElementById('tableBody')
+
+            if (productName.trim() == '' || productImage.trim() == '' || productPrice.trim() == '' || qtyLeft.trim() == '') {
+                warningMsg.style.display = 'block'
+            }
+            else {
+                warningMsg.style.display = 'none'
+
+                let products = {
+                    productName, productImage, productPrice, qtyLeft
+                }
+                allProducts.push(products)
+                console.log(allProducts)
+
+                displayProducts()
+
+                document.getElementById('productName').value = ''
+                document.getElementById('productImage').value = ''
+                document.getElementById('productPrice').value = ''
+                document.getElementById('qtyLeft').value = ''
+
+            }
+        }
+
+        function displayProducts() {
+            let htmlTable = ''
+            for (let i = 0; i < allProducts.length; i++) {
+                htmlTable += `<tr>
+                    <td>${i + 1}</td>
+                     <td>${allProducts[i].productName}</td>
+                      <td>${allProducts[i].productPrice}</td>
+                       <td><img src="${allProducts[i].productImage}" alt="" height="50"></td>
+                        <td>${allProducts[i].qtyLeft}</td>
+                         <td><button class="btn btn-info  my-2" onclick="editProduct()">Edit</button></td>
+                         <td><button class="btn btn-danger my-2" onclick="deleteProduct()">Delete</button></td>
+                         </tr>`
+            }
+            tableBody.innerHTML = htmlTable
+        }
+
+        function editProduct(i) {
+            let newProductName = prompt('Enter a new name', allProducts[i].productName)
+            let newProductPrice = prompt('Enter a new price', allProducts[i].productPrice)
+            let newProductImage = prompt('Enter a new image', allProducts[i].productImage)
+            let newQtyLeft = prompt('Enter a new quantity', allProducts[i].qtyLeft)
+
+            if (newProductName.trim() !== null || newProductPrice.trim() !== null || newProductImage.trim()){
+                allProducts[i].productName = newProductName
+                allProducts[i].productPrice = newProductPrice
+                allProducts[i].productImage = newProductImage
+                allProducts[i].qtyLeft = newQtyLeft
+
+                displayProducts()
+            }
+         }
+
+         function deleteProduct(i){
+            let deleted = confirm('Are you sure you want to delete this product ?')
+            if(deleted){
+                allProducts.splice(i, 1)
+                displayProducts()
+            }
+         }
+
+         function deleteAllProducts(){
+            let deleted = confirm('Are you sure you want to delete all products')
+            if(deleted){
+                allProducts = []
+                displayProducts()
+            }
+         }
+    </script>
+</body>
+
+</html>
