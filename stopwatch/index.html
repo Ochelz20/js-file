@@ -29,6 +29,7 @@
 
     <div class="container my-5">
         <div class="card shadow text-center bg-primary-subtle py-4 mx-auto" style="max-width: 500px;">
+            <h4 id="myTime">Date: Time</h4>
             <h3 class="mb-4">Stopwatch</h3>
             <div class="row justify-content-center">
                 <div class="col-3 number-box" id="displayHours">00h</div>
@@ -104,6 +105,40 @@
             displayMilliseconds.innerHTML = '000ms'
             stopWatch()
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setInterval(() => {
+                let dateTime = new Date()
+                // document.getElementById('myTime').innerHTML = dateTime
+                let dateOption = {
+                    weekday: 'short', 
+                    // long, short, narrow
+                    day: 'numeric',
+                    // numeric, 2-digit
+                    month: 'short',
+                    // long, short, narrow, numeric, 2-digit
+                    year: 'numeric'
+                    // numeric, 2-digit
+                }
+
+                let timeOption = {
+                    hour: 'numeric',
+                    // numeric, 2-digit
+                    second: 'numeric',
+                    // numeric, 2-digit
+                    minute: 'numeric',
+                    // numeric, 2-digit
+                    hour12: false
+                    // true, false
+                }
+
+                // en-US, en-UK, jp-JP, fr-FR, undefined
+                let date = dateTime.toLocaleDateString(undefined, dateOption)
+                let time = dateTime.toLocaleDateString(undefined, timeOption)
+                document.getElementById('myTime').innerHTML = `${date} : ${time}`
+            }, 1000)
+
+        })
     </script>
 </body>
 
