@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clickMe()">Click</button>
+    <button onclick="displayProducts()">Display</button>
+    <div id="myScreen"></div>
+    <div id="myScreen2"></div>
+
+    <script>
+        let url = 'https://jsonplaceholder.typicode.com/users'
+        const clickMe = async () => {
+            let response = await fetch (url)
+            console.log(response);
+
+            let users = await response.json()
+            console.log(users);
+            // array of object
+            console.log(users[0].name);
+
+            for(let i = 0; i < users.legth; i++){
+                document.getElementById('myScreen').innerHTML += `<p>${users[i].name}</p> <p>${users[i].email}</p>`
+            }
+        }
+
+        const displayProducts = async () => {
+            let response = await fetch('https://fakestoreapi.com/products')
+            console.log(response);
+
+            let products = await response.json()
+            console.log(products);
+
+            products.forEach(product => {
+                document.getElementById('myScreen2').innerHTML += `<p>${product.title}</p>
+                <img src="${product.image}" alt="" height="100"><br>
+                <small>$${product.price}</small>`
+            })
+        }
+    </script>
+</body>
+</html>

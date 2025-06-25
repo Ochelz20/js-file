@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // class NameOfClass{
+        //     constructor(parameter){
+        //         // initialize the object
+        //         this.property = parameter;
+        //     }
+        //     mehod(){
+        //         // code to execute
+        //     }
+        // }
+        // let instance = new nameOfClass('value of parameter') 
+        // // object
+        // instance.method()
+
+        class Cake {
+            constructor(flavour) {
+                this.flavorOfCake = flavor
+            }
+            describe() {
+                console.log(`This cake is ${this.flavorOfCake} flavored`)
+            }
+        }
+        let chocolateCake = new Cake('chocolate')
+        // object
+        console.log(typeof (chocolateCake));
+
+        chocolateCake.describe()
+        let vanillaCake = new Cake('vanilla')
+        vanillaCake.describe()
+
+        class Student {
+            constructor(fullname, password, email) {
+                this.fullname = fullname,
+                    this.password = password,
+                    this.email = email
+
+            }
+            introduce() {
+                return `My name is ${this.fullname}, my password is ${this.password} and my email is ${this.email}`
+            }
+        }
+        let student1 = new Student('Joy WIlliams, pass123', 'joywilliams@gmail.com')
+        console.log(student1.introduce());
+
+        let student2 = new Student('John Doe', 'pass456', 'johndoe@gmail.com')
+        console.log(student2.introduce());
+
+        let secondStudent = student2.introduce()
+        document.getElementById('myScreen').innerHTML = screenStudent
+
+
+
+    </script>
+</body>
+
+</html>
