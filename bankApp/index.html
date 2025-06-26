@@ -11,14 +11,14 @@
 
 <body>
     <div class="container my-5">
-        <div class="card-shadow p-4 mx-auto" style="max-width: 500px;">
+        <div id="accountDiv" class="card-shadow p-4 mx-auto" style="max-width: 500px;">
             <h2 class="text-center mb-4">Welcome to Ochelz Bank</h2>
             <div class="alert alert-danger" role="alert" style="display: none;" id="warningMsg">
                 Input fields cannot be empty!
             </div>
             <div class="mb-3">
                 <input type="text" class="form-control mb-3" placeholder="Fullname" id="fullname">
-                <input type="text" class="form-control" placeholder="Password" id="password">
+                <input type="password" class="form-control" placeholder="Password" id="password">
             </div>
             <button class="btn btn-success w-100" onclick="createAccount()">Create Account</button>
         </div>
@@ -43,19 +43,71 @@
                     this.password = password,
                     this.balance = 0
             }
-            deposit(amount){
-                this.balane += amount
+            deposit(amount) {
+                this.balance += amount
                 return `Youn have successfully deposited ${amount}`
             }
-            withdraw(amount){
-                if(this.balance < amount){
+            withdraw(amount) {
+                if (this.balance < amount) {
                     return "Withdrawal failed: Insufficient fund"
                 }
-                else{
+                else {
                     this.balance -= amount
+                    return `You have successfully withdrawn ${amount}`
                 }
             }
+            checkBalance() {
+                return `Your account balance is ${this.balance}`
+            }
         }
+
+        let userAccount;
+
+        const createAccount = () => {
+            let fullname = document.getElementById("fullname").value
+            let password = document.getElementById("password").value
+            let warningMsg = document.getElementById("warningMsg")
+            let welcomeMsg = document.getElementById("welcomeMsg")
+            let transactionDiv = document.getElementById("transactionDiv")
+            let accountDiv = document.getElementById("accountDiv")
+
+            if (fullname.trim() == "" || password.trim() == "") {
+                warningMsg.style.display = "block";
+            } else {
+                warningMsg.style.display = "none";
+                userAccount = new BankAccount(fullname, password);
+                accountDiv.style.display = "none";
+                transactionDiv.style.display = "block";
+                welcomeMsg.innerHTML = `Welcome, ${fullname}. Your account has been created successfully!`
+            }
+        }
+
+
+
+        const depositMoney = () => {
+            let amount = parseFloat(document.getElementById("amount").value);
+            let message = document.getElementById("message");
+            if (isNaN(amount) || amount <= 0) {
+                message.innerHTML = "Please enter a valid amount to deposit.";
+            } else {
+                message.innerHTML = `${userAccount.deposit(
+                    amount
+                )}.${userAccount.checkBalance()}`;
+                document.getElementById("amount").value = "";
+            }
+        };
+        const withdrawMoney = () => {
+            let amount = parseFloat(document.getElementById("amount").value);
+            let message = document.getElementById("message");
+            if (isNaN(amount) || amount <= 0) {
+                message.innerHTML = "Please enter a valid amount to withdraw.";
+            } else {
+                message.innerHTML = `${userAccount.withdraw(
+                    amount
+                )}.${userAccount.checkBalance()}`;
+                document.getElementById("amount").value = "";
+            }
+        };
     </script>
 </body>
 
